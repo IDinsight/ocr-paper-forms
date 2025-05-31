@@ -1,0 +1,106 @@
+{
+  "type": "object",
+  "properties": {
+    "teacher": {
+      "type": "string",
+      "description": "Teacher's Name"
+    },
+    "school": {
+      "type": "string",
+      "description": "School Name"
+    },
+    "round": {
+      "type": "string",
+      "enum": ["Baseline", "Endline"],
+      "description": "Round Type"
+    },
+    "region": {
+      "type": "string",
+      "description": "Region"
+    },
+    "district": {
+      "type": "string",
+      "description": "District"
+    },
+    "municipality": {
+      "type": "string",
+      "description": "Municipality"
+    },
+    "student_data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nr": {
+            "type": "string",
+            "description": "Number (Version)"
+          },
+          "first_name": {
+            "type": "string",
+            "description": "First Name"
+          },
+          "surname": {
+            "type": "string",
+            "description": "Surname"
+          },
+          "gender": {
+            "type": "string",
+            "enum": ["M", "F"],
+            "description": "Gender (F/M)"
+          },
+          "grade_class": {
+            "type": "string",
+            "description": "Grade & Class"
+          },
+          "highest_num_rec": {
+            "type": "integer",
+            "description": "Highest Number Recognition (0/1/2/3/4)"
+          },
+          "highest_operation": {
+            "type": "string",
+            "enum": ["B", "A", "S", "M", "MD"],
+            "description": "Highest Operation (B/A/S/M/MD)"
+          },
+          "tarl_group": {
+            "type": "string",
+            "description": "TaRL Group (e.g. A or MD)"
+          }
+        },
+        "required": [
+          "nr",
+          "first_name",
+          "surname",
+          "gender",
+          "grade_class",
+          "highest_num_rec",
+          "highest_operation"
+        ]
+      }
+    },
+    "tarl_group_name": {
+      "type": "string",
+      "description": "TaRL Group Name"
+    },
+    "teacher_first_name": {
+      "type": "string",
+      "description": "Teacher First Name"
+    },
+    "teacher_surname": {
+      "type": "string",
+      "description": "Teacher Surname"
+    },
+    "student_count": {
+      "type": "integer",
+      "description": "Student Count"
+    }
+  },
+  "required": [
+    "teacher",
+    "school",
+    "round",
+    "region",
+    "district",
+    "municipality",
+    "student_data"
+  ]
+}
